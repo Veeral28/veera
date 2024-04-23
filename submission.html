@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Submission</title>
+    <link rel="stylesheet" href="submission.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header>
+        
+        <div class="head">
+            <img src="logo2.png" class="logo" alt="logo">
+            <h1>CaseConnect - Electronic Court Filing Platform</h1>
+        </div>
+        
+        <button class="loglink"><a href="login.html">Login</a></button>
+    </header>
+    
+    <main>
+        <form action="submit.php" method="post" enctype="multipart/form-data" class="submission-form">
+            <div class="form-group">
+                <label for="title">Document Title:</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+            
+
+<select id="case" name="case" required>
+    <option value="">Select Case</option>
+    <?php
+    // Connect to your database
+    $servername = "localhost";
+    $username = "username"; // Replace with your database username
+    $password = "password"; // Replace with your database password
+    $dbname = "your_database"; // Replace with your database name
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    // Query to fetch cases from the database
+    $sql = "SELECT id, case_name FROM cases";
+    $result = $conn->query($sql);
+
+    // Output options for each case
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            echo "<option value='" . $row['id'] . "'>" . $row['case_name'] . "</option>";
+        }
+    } else {
+        echo "No cases found";
+    }
+
+    // Close database connection
+    $conn->close();
+    ?>
+</select>
+
+            <div class="form-group">
+                <label for="file">Choose File:</label>
+                <input type="file" id="file" name="file" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+    
+
+</body>
+</html>

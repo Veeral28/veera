@@ -1,0 +1,147 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: wheat;
+}
+
+header {
+    background-color: #4b4b4b;
+    color: white;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    position: sticky;
+    top: 0;
+    
+  }
+  
+  .head {
+    display: flex;
+    align-items: center;
+  }
+  
+  .head .logo {
+    height: 80px;
+    width: 80px; 
+    margin-right: 10px;
+  }
+  
+  .head h1 {
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font: 1em sans-serif;
+    font-size: 35px;
+  }
+  
+  
+  .loglink{
+    
+    padding: 10px;
+    background-color: rgb(22, 69, 172);
+    color: white;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+  }
+  .loglink a {
+    color: white;
+    text-decoration: none;
+  
+  }
+  
+  .loglink:hover{
+    background-color: rgb(26, 41, 122);
+  }
+  
+  .loglink a:hover {
+    text-decoration: underline;
+  
+  }
+  
+  .intro{
+    height: 350px;
+    width: 100%;
+  }
+
+/* Resetting default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+   
+}
+
+/* Header styles */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 32px;
+}
+
+h1, h2 {
+    margin-top: 0;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.case-list {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.case-list h2 {
+    color: #333;
+}
+
+.case-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.case-list li {
+    margin-bottom: 10px;
+}
+
+.case-list a {
+    color: #333;
+    text-decoration: none;
+}
+
+.case-list a:hover {
+    text-decoration: underline;
+}
+
+.case-details {
+    flex: 2;
+}
+
+.case-details h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.case-details div {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+}

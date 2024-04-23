@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lawyer Profile</title>
+    <link rel="stylesheet" href="profile.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header>
+        
+        <div class="head">
+            <img src="logo2.png" class="logo" alt="logo">
+            <h1>CaseConnect - Electronic Court Filing Platform</h1>
+        </div>
+        <form class="search-form" action="/search" method="get">
+            <input type="text" name="q" placeholder="Search services...">
+            <button type="submit">Search</button>
+        </form>
+
+    </header>
+    
+    <main>
+        <div class="container">
+            <h2>Lawyer Profile</h2>
+            <div class="profile-box">
+                <div class="profile-info">
+                    <?php
+                    // Connect to your database
+                    $servername = "localhost";
+                    $username = "username"; // Replace with your database username
+                    $password = "password"; // Replace with your database password
+                    $dbname = "your_database"; // Replace with your database name
+
+                    // Create connection
+                    $conn = new mysqli($servername, $username, $password, $dbname);
+
+                    // Check connection
+                    if ($conn->connect_error) {
+                        die("Connection failed: " . $conn->connect_error);
+                    }
+
+                    // Query to fetch lawyer profile from the database
+                    $sql = "SELECT * FROM lawyers WHERE id = '1'"; // Assuming you have a 'lawyers' table with a unique ID for each lawyer
+                    $result = $conn->query($sql);
+
+                    // Display profile information
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<img src='" . $row['profile_picture'] . "' alt='Profile Picture'>";
+                            echo "<p><strong>Name:</strong> " . $row['name'] . "</p>";
+                            echo "<p><strong>Email:</strong> " . $row['email'] . "</p>";
+                            echo "<p><strong>Practice Area:</strong> " . $row['practice_area'] . "</p>";
+                            // Add more profile fields as needed
+                        }
+                    } else {
+                        echo "No profile found";
+                    }
+
+                    // Close database connection
+                    $conn->close();
+                    ?>
+                </div>
+                <div class="cases">
+                    <h3>Cases Involved</h3>
+                    <ul>
+                        <li>Case 1</li>
+                        <li>Case 2</li>
+                        <!-- Display cases dynamically from the database -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <!-- Footer content -->
+    </footer>
+</body>
+</html>

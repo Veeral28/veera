@@ -1,0 +1,153 @@
+header {
+    background-color: #4b4b4b;
+    color: white;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    position: sticky;
+    top: 0;
+    
+  }
+  .search-form input[type="text"] {
+    width: 300px; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px; 
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  .search-form button[type="submit"] {
+    padding: 10px;
+    background-color: rgb(22, 69, 172);
+    color: white;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+  }
+  
+  .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+  }
+  
+  .work{
+    width: 200px;
+    height: 400px;
+    margin: 40px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.24);
+    background-color: white; 
+    
+  }
+  
+  .work button{
+  
+    width: 200px;
+    height: 400px;
+  }
+  
+  .work img{
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+  }
+  
+  .head {
+    display: flex;
+    align-items: center;
+  }
+  
+  .head .logo {
+    height: 80px;
+    width: 80px; 
+    margin-right: 10px;
+  }
+  
+  .head h1 {
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font: 1em sans-serif;
+    font-size: 35px;
+  }
+  
+  
+  .loglink{
+    
+    padding: 10px;
+    background-color: rgb(22, 69, 172);
+    color: white;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+  }
+  .loglink a {
+    color: white;
+    text-decoration: none;
+  
+  }
+  
+  .loglink:hover{
+    background-color: rgb(26, 41, 122);
+  }
+  
+  .loglink a:hover {
+    text-decoration: underline;
+  
+  }
+  
+  .intro{
+    height: 350px;
+    width: 100%;
+  }
+  body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styling */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.profile-box {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.cases {
+    margin-left: 50px;
+}
+
+.cases h3 {
+    margin-bottom: 10px;
+}
+
+.cases ul {
+    list-style-type: none;
+}
+
+.cases li {
+    margin-bottom: 5px;
+}

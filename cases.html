@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Management</title>
+    <link rel="stylesheet" href="case.css">
+</head>
+<body>
+    <header>
+        
+        <div class="head">
+            <img src="logo2.png" class="logo" alt="logo">
+            <h1>CaseConnect - Electronic Court Filing Platform</h1>
+        </div>
+        
+        <button class="loglink"><a href="login.html">Login</a></button>
+    </header>
+
+    <main>
+        <div class="case-list">
+            <h2>Case List</h2>
+            <ul>
+                <?php
+                // Include the PHP file to fetch cases
+                include 'fetch_cases.php';
+
+                // Parse JSON response
+                $cases = json_decode($response);
+
+                // Display cases
+                foreach ($cases as $case) {
+                    echo "<li><a href='case.php?id={$case->id}'>{$case->title}</a></li>";
+                }
+                ?>
+            </ul>
+        </div>
+
+        <div class="case-details">
+            <h2>Case Details</h2>
+            <div>
+                <!-- Case details will be displayed here -->
+            </div>
+        </div>
+    </main>
+</body>
+</html>

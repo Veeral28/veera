@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messaging Forum</title>
+    <link rel="stylesheet" href="forum.css">
+</head>
+<body>
+    <header>
+        
+        <div class="head">
+            <img src="logo2.png" class="logo" alt="logo">
+            <h1>CaseConnect - Electronic Court Filing Platform</h1>
+        </div>
+
+        <button class="loglink"><a href="login.html">Login</a></button>
+    </header>
+
+    <div class="container">
+        <div class="messages" id="messages"></div>
+        <div class="input-container">
+            <input type="text" id="messageInput" placeholder="Type your message...">
+            <button onclick="sendMessage()">Send</button>
+            <button type="reset">reset</button>
+        </div>
+    </div>
+    
+    <script src="forum.js"></script>
+</body>
+</html>
